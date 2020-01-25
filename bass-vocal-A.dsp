@@ -8,39 +8,39 @@ Ebassf1 = fi.highpass(order, fcut) : fi.lowpass(order, fcut) : *(gain) : meter
     order = 128;
     fcut = 600;
     f1group(x) = hgroup("[01] f1", x);
-    gain = f1group(vslider("[01] GAIN", -15, -96, +6, 0.1)) : ba.db2linear : si.smoo;
+    gain = f1group(vslider("[01] GAIN", -21.4, -96, +6, 0.1)) : ba.db2linear : si.smoo;
     meter(x) = f1group(attach(x, an.amp_follower(0.5, x) :ba.linear2db : vbargraph("[02] METER [unit:dB]", -70, +5)));
 };
 Ebassf2 = fi.highpass(order, fcut): fi.lowpass(order, fcut) : *(gain) : meter 
   with{
-    order = 128;
+    order = 118;
     fcut = 1040;
     f2group(x) = hgroup("[02] f2", x);
-    gain = f2group(vslider("[01] GAIN", -30.8, -96, +6, 0.1)) : ba.db2linear : si.smoo;
+    gain = f2group(vslider("[01] GAIN", -12.2, -96, +6, 0.1)) : ba.db2linear : si.smoo;
     meter(x) = f2group(attach(x, an.amp_follower(0.5, x) :ba.linear2db : vbargraph("[02] METER [unit:dB]", -70, +5)));
 };
 Ebassf3 = fi.highpass(order, fcut): fi.lowpass(order, fcut): *(gain) : meter 
   with{
-    order = 128;
+    order = 74;
     fcut = 2250;
     f3group(x) = hgroup("[03] f3", x);
-    gain = f3group(vslider("[01] GAIN", -46.9, -96, +6, 0.1)) : ba.db2linear : si.smoo;
+    gain = f3group(vslider("[01] GAIN", 12, -96, +12, 0.1)) : ba.db2linear : si.smoo;
     meter(x) = f3group(attach(x, an.amp_follower(0.150, x) :ba.linear2db : vbargraph("[02] METER [unit:dB]", -70, +5)));
 };
 Ebassf4 = fi.highpass(order, fcut): fi.lowpass(order, fcut): *(gain) : meter 
   with{
-    order = 128;
+    order = 64;
     fcut = 2450;
     f4group(x) = hgroup("[04] f4", x);
-    gain = f4group(vslider("[01] GAIN", -56.7, -96, +6, 0.1)) : ba.db2linear : si.smoo;
+    gain = f4group(vslider("[01] GAIN", 10, -96, +6, 0.1)) : ba.db2linear : si.smoo;
     meter(x) = f4group(attach(x, an.amp_follower(0.150, x) :ba.linear2db : vbargraph("[02] METER [unit:dB]", -70, +5)));
 };
 Ebassf5 = fi.highpass(order, fcut): fi.lowpass(order, fcut): *(gain) : meter 
   with{
-    order = 128;
+    order = 54;
     fcut = 2750;
     f5group(x) = hgroup("[05] f5", x);
-    gain = f5group(vslider("[01] GAIN", -72.4, -96, +6, 0.1)) : ba.db2linear : si.smoo;
+    gain = f5group(vslider("[01] GAIN", -1, -96, +6, 0.1)) : ba.db2linear : si.smoo;
     meter(x) = f5group(attach(x, an.amp_follower(0.150, x) : ba.linear2db : vbargraph("[02] METER [unit:dB]", -70, +5)));
 };
 
